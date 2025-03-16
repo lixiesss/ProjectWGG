@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Infinity and BEYOND!</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    </head>
+    <body>
+        <!-- Efek Background Luar Angkasa -->
+        <link rel="preload" href="space-animation.png" as="image">
+
+        <!-- Animasi Opening -->
+        <div class="parallax-container">
+            <h1 class="parallax-text">Welcome Gratefull Generation 2025</h1>
+            <h2 class="parallax-text">Beyond the world, let's rock!</h2>
+            <button onclick="scrollToForm()" class="parallax-text">Start!🚀✨</button>
+            <img class="parallax-meteor">
+        </div>
+
+        <!-- Form Input KTM -->
+        <div class="container" id="formSection">
+            <h1>Pembuatan Kartu Tanda Mahasiswa</h1>
+            <!-- Tempat Menampilkan Foto KTM -->
+            <div class="photo-container fade-in" id="photoPreviewContainer" style="display: none;">
+                <img id="photoPreview" src="" alt="Foto KTM">
+            </div>
+
+            <input type="text" id="name" placeholder="Nama Mahasiswa">
+            <input type="text" id="nrp" placeholder="NRP (Contoh : C14240005)">
+            <input type="text" id="jurusan" placeholder="Jurusan (Contoh: Teknik Informatika)">
+            <label for="photo">Unggah Foto KTM (Format JPG/JPEG/PNG):</label>
+            <input type="file" id="photo" accept=".jpg, .jpeg, .png" onchange="previewPhoto()">
+            <button onclick="addStudent()">Tambahkan KTM</button>
+        </div>
+
+        <!-- KTM Container (Grid Layout) -->
+        <div class="ktm-container" id="ktmContainer"></div>
+
+        <!-- Edit Form (Hidden by default) -->
+        <div class="edit-container" id="editContainer" style="display: none;">
+            <h2>Edit KTM</h2>
+            <input type="text" id="editName" placeholder="Nama Mahasiswa">
+            <input type="text" id="editNrp" placeholder="NRP">
+            <input type="text" id="editJurusan" placeholder="Jurusan">
+            <input type="file" id="editPhoto" accept=".jpg, .jpeg" onchange="previewEditPhoto()">
+            <button onclick="saveEdit()">Selesai</button>
+            <button onclick="cancelEdit()">Batal</button>
+        </div>
+
+        <!-- Import JS -->
+        <script src="scripts.js"></script>
+    </body>
+    </html>
